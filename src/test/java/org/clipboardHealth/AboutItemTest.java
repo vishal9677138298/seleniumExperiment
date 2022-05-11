@@ -16,8 +16,6 @@ import static org.hamcrest.Matchers.*;
 @ContextConfiguration(classes = {SpringConfig.class, PropertiesHolder.class})
 public class AboutItemTest extends BaseTest{
     @Autowired
-    private DriverManager manager;
-    @Autowired
     private PropertiesHolder properties;
     @Autowired
     private HomePage homePage;
@@ -38,7 +36,6 @@ public class AboutItemTest extends BaseTest{
         assertThat("Information about item is not present",isAboutItemPresent, is(equalTo(true)));
         homePage.getInfoAboutItem().forEach(System.out::println);
     }
-
 
     @AfterEach
     void close_browser(){
