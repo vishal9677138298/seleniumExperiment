@@ -1,8 +1,7 @@
 package org.clipboardHealth;
 
-import org.clipboardHealth.driverHandlers.DriverManager;
+import org.clipboardHealth.driverhandler.DriverManager;
 import org.clipboardHealth.pages.Page;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,16 +12,13 @@ public class BaseTest {
     private DriverManager manager;
 
     @BeforeAll
-    void startService(){
-        manager.startService();
+    void setup(){
+        if (AppConfig.executionEnvironment.equals("local")){
+            manager.setUpDriver();
+        }
     }
 
-    @AfterAll
-    void stopService(){
-        manager.stopService();
-    }
-
-    protected void startBrowserAndInitializePage(Page page){
+    protected void startBrowserAndInitialize(Page page){
         manager.startBrowser();
         page.initialize();
     }

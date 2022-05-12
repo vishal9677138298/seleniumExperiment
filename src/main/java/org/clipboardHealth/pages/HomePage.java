@@ -1,7 +1,7 @@
 package org.clipboardHealth.pages;
 
-import org.clipboardHealth.domain.SortOption;
-import org.clipboardHealth.seleniumUtils.WindowHandler;
+import org.clipboardHealth.model.SortOption;
+import org.clipboardHealth.utils.seleniumUtils.WindowHandler;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

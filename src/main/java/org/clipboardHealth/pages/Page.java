@@ -1,6 +1,6 @@
 package org.clipboardHealth.pages;
 
-import org.clipboardHealth.driverHandlers.DriverManager;
+import org.clipboardHealth.driverhandler.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
