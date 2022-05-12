@@ -19,7 +19,7 @@ services:
     volumes:
       - /dev/shm:/dev/shm
   selenium-experiment:
-    image: vishal/selenium-experiment:latest
+    image: vishalsugumar/selenium-experiment
     container_name: selenium-experiment
     depends_on:
       - selenium-hub
