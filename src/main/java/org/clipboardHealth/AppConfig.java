@@ -9,8 +9,7 @@ import java.util.Optional;
 @ComponentScan("org.clipboardHealth")
 @PropertySource("classpath:App.properties")
 public class AppConfig {
-    public static String executionEnvironment = Optional.of(System.getenv("TEST_EXEC_ENV")).orElseThrow(()->
-            new NullPointerException("TEST_EXEC_ENV should be set as environment variable"));
+    public static String executionEnvironment = Optional.of(System.getenv("TEST_EXEC_ENV")).orElse("local");
     public static String hostUrl = "http://"+Optional.of(System.getenv("HUB_HOST"))
             .orElseThrow(()-> new NullPointerException("HOST_URL should be set as an environment variable"))+":4444/wd/hub";
 }
